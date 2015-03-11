@@ -19,7 +19,6 @@ public class MainActivity extends ActionBarActivity {
     private Spinner subjectSpinner;
     private Spinner licenseSpinner;
     private Spinner tagSpinner1;
-    private Spinner tagSpinner2;
     private ArrayAdapter<String> tagAdapter;
     private String[] subjects = {"Choose subject", "Lanugage and Literature", "Foreign Languages", "Mathematics",
         "Natural Sciences", "Physics" };
@@ -48,12 +47,10 @@ public class MainActivity extends ActionBarActivity {
 
         // set up spinners for tags
         tagSpinner1 = (Spinner) findViewById(R.id.spinnerTag1);
-        tagSpinner2 = (Spinner) findViewById(R.id.spinnerTag2);
         tagAdapter = new ArrayAdapter<String>(MainActivity.this,
                 android.R.layout.simple_spinner_item, tags);
         tagAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         tagSpinner1.setAdapter(tagAdapter);
-        tagSpinner2.setAdapter(tagAdapter);
 
 //        RelativeLayout rl = (RelativeLayout) findViewById(R.id.mainLayout);
 //        Spinner[] spinners = new Spinner[3];
