@@ -1,11 +1,15 @@
 package com.learning.vitaliylakusta.learnmixer1_phone;
 
+import android.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -14,10 +18,14 @@ public class MainActivity extends ActionBarActivity {
 
     private Spinner subjectSpinner;
     private Spinner licenseSpinner;
+    private Spinner tagSpinner1;
+    private Spinner tagSpinner2;
+    private ArrayAdapter<String> tagAdapter;
     private String[] subjects = {"Choose subject", "Lanugage and Literature", "Foreign Languages", "Mathematics",
         "Natural Sciences", "Physics" };
     private String[] licenses = { "All rights reserved", "Attribution alone", "Attribution + NoDerivatives",
         "Attribution + ShareAlike", "Attribution + Noncommercial", "Attribution + Noncommercial + NoDerivatives", };
+    private String[] tags = { "tag1", "tag2", "tag3", "tag4" };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +46,28 @@ public class MainActivity extends ActionBarActivity {
         licenseAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         licenseSpinner.setAdapter(licenseAdapter);
 
+        // set up spinners for tags
+        tagSpinner1 = (Spinner) findViewById(R.id.spinnerTag1);
+        tagSpinner2 = (Spinner) findViewById(R.id.spinnerTag2);
+        tagAdapter = new ArrayAdapter<String>(MainActivity.this,
+                android.R.layout.simple_spinner_item, tags);
+        tagAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        tagSpinner1.setAdapter(tagAdapter);
+        tagSpinner2.setAdapter(tagAdapter);
+
+//        RelativeLayout rl = (RelativeLayout) findViewById(R.id.mainLayout);
+//        Spinner[] spinners = new Spinner[3];
+//        for (int i = 0; i < 3; i++) {
+//            spinners[i] = new Spinner(getApplicationContext());
+//            spinners[i].setLayoutParams(new Spinner.LayoutParams(Spinner.LayoutParams.WRAP_CONTENT,
+//                    Spinner.LayoutParams.WRAP_CONTENT));
+//            RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) spinners[i].getLayoutParams();
+//            params.addRule(RelativeLayout.ABOVE, R.id.textTagTitle);
+//            spinners[i].setLayoutParams(params);
+//
+//            spinners[i].setAdapter(tagAdapter);
+//            rl.addView(spinners[i]);
+//        }
 
         // set up range bar for age group
         RangeSeekBar<Integer> seekBar = new RangeSeekBar<Integer>(0, 90, getApplicationContext());
@@ -77,5 +107,15 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onClickAddTag(View view) {
+        LinearLayout ll = (LinearLayout) findViewById(R.id.linearLayout);
+        Spinner spinner = new Spinner(getApplicationContext());
+        spinner.setLayoutParams(tagSpinner1.getLayoutParams());
+        spinner.setAdapter(tagAdapter);
+        spinner.setPopupBackgroundDrawable(tagSpinner1.getPopupBackground());
+
+        ll.addView(spinner, ll.getChildCount() - 1);
     }
 }

@@ -9,5 +9,6 @@
     <string name="topic_hint">Topic</string>
     <string name="range_group_title">Range group: 0-90</string>
     <string name="spinner_license_title">License</string>
+    <string name="tags_title">Tags</string>
 
 </resources>
