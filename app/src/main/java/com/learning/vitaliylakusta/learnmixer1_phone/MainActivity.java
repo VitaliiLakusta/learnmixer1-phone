@@ -1,6 +1,8 @@
 package com.learning.vitaliylakusta.learnmixer1_phone;
 
 import android.app.ActionBar;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -114,5 +116,9 @@ public class MainActivity extends ActionBarActivity {
         spinner.setPopupBackgroundDrawable(tagSpinner1.getPopupBackground());
 
         ll.addView(spinner, ll.getChildCount() - 1);
+    }
+
+    public void onClickWatchVideo(View view) {
+        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=9XFeW9dgyIs&list=UUAuUUnT6oDeKwE6v1NGQxug")));
     }
 }
