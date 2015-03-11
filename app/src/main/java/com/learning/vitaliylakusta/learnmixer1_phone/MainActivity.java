@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -20,6 +21,7 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // set up spinner
         subjectSpinner = (Spinner) findViewById(R.id.spinnerSubject);
         ArrayAdapter<String> subjectAdapter = new ArrayAdapter<String>(MainActivity.this,
                 android.R.layout.simple_spinner_item, subjects);
@@ -27,7 +29,19 @@ public class MainActivity extends ActionBarActivity {
         subjectAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         subjectSpinner.setAdapter(subjectAdapter);
 
-        RangeSeekBar<Integer> seekBar = new RangeSeekBar<Integer>(0, 75, getApplicationContext());
+
+        // set up range bar for age group
+
+        RangeSeekBar<Integer> seekBar = new RangeSeekBar<Integer>(0, 90, getApplicationContext());
+        seekBar.setOnRangeSeekBarChangeListener(new RangeSeekBar.OnRangeSeekBarChangeListener<Integer>() {
+            @Override
+            public void onRangeSeekBarValuesChanged(RangeSeekBar<?> bar, Integer minValue, Integer maxValue) {
+                // handle changed range values
+                TextView rangeGroupText = (TextView) findViewById(R.id.rangeGroupText);
+                rangeGroupText.setText("Age group: " + minValue + "-" + maxValue);
+            }
+        });
+
         ViewGroup layout = (ViewGroup) findViewById(R.id.linearRange);
         layout.addView(seekBar);
     }

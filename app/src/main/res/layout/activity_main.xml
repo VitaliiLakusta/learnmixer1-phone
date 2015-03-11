@@ -55,12 +55,23 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
+    <TextView
+        android:id="@+id/rangeGroupText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Age group: 0-90"
+        android:layout_below="@id/textTopic"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="5dp"/>
+
     <LinearLayout
         android:id="@+id/linearRange"
         android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textTopic"
+        android:layout_below="@+id/rangeGroupText"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"></LinearLayout>
 

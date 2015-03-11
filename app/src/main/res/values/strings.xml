@@ -7,5 +7,6 @@
     <string name="description_hint">Description</string>
     <string name="spinner_subject_title">Subjects</string>
     <string name="topic_hint">Topic</string>
+    <string name="range_group_title">Range group: 0-90</string>
 
 </resources>
