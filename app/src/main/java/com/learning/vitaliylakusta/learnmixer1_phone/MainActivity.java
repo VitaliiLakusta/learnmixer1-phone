@@ -13,21 +13,30 @@ import android.widget.TextView;
 public class MainActivity extends ActionBarActivity {
 
     private Spinner subjectSpinner;
+    private Spinner licenseSpinner;
     private String[] subjects = {"Choose subject", "Lanugage and Literature", "Foreign Languages", "Mathematics",
         "Natural Sciences", "Physics" };
+    private String[] licenses = { "All rights reserved", "Attribution alone", "Attribution + NoDerivatives",
+        "Attribution + ShareAlike", "Attribution + Noncommercial", "Attribution + Noncommercial + NoDerivatives", };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // set up spinner
+        // set up spinner for subjects
         subjectSpinner = (Spinner) findViewById(R.id.spinnerSubject);
         ArrayAdapter<String> subjectAdapter = new ArrayAdapter<String>(MainActivity.this,
                 android.R.layout.simple_spinner_item, subjects);
-
         subjectAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         subjectSpinner.setAdapter(subjectAdapter);
+
+        // set up spinner for licenses
+        licenseSpinner = (Spinner) findViewById(R.id.spinnerLicense);
+        ArrayAdapter<String> licenseAdapter = new ArrayAdapter<String>(MainActivity.this,
+                android.R.layout.simple_spinner_item, licenses);
+        licenseAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        licenseSpinner.setAdapter(licenseAdapter);
 
 
         // set up range bar for age group
