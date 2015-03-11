@@ -4,6 +4,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
@@ -25,6 +26,10 @@ public class MainActivity extends ActionBarActivity {
 
         subjectAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         subjectSpinner.setAdapter(subjectAdapter);
+
+        RangeSeekBar<Integer> seekBar = new RangeSeekBar<Integer>(0, 75, getApplicationContext());
+        ViewGroup layout = (ViewGroup) findViewById(R.id.linearRange);
+        layout.addView(seekBar);
     }
 
 
