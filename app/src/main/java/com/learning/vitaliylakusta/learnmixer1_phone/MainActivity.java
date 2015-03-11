@@ -4,14 +4,27 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 
 public class MainActivity extends ActionBarActivity {
+
+    private Spinner subjectSpinner;
+    private String[] subjects = {"Choose subject", "Lanugage and Literature", "Foreign Languages", "Mathematics",
+        "Natural Sciences", "Physics" };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        subjectSpinner = (Spinner) findViewById(R.id.spinnerSubject);
+        ArrayAdapter<String> subjectAdapter = new ArrayAdapter<String>(MainActivity.this,
+                android.R.layout.simple_spinner_item, subjects);
+
+        subjectAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        subjectSpinner.setAdapter(subjectAdapter);
     }
 
 
