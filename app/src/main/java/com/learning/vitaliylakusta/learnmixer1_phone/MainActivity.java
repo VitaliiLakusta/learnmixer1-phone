@@ -31,8 +31,9 @@ public class MainActivity extends ActionBarActivity {
 
 
         // set up range bar for age group
-
         RangeSeekBar<Integer> seekBar = new RangeSeekBar<Integer>(0, 90, getApplicationContext());
+        TextView rangeGroupText = (TextView) findViewById(R.id.rangeGroupText);
+        rangeGroupText.setText("Age group: " + seekBar.getSelectedMinValue() + "-" + seekBar.getSelectedMaxValue());
         seekBar.setOnRangeSeekBarChangeListener(new RangeSeekBar.OnRangeSeekBarChangeListener<Integer>() {
             @Override
             public void onRangeSeekBarValuesChanged(RangeSeekBar<?> bar, Integer minValue, Integer maxValue) {
