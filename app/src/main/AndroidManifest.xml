@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".LearninResources"
+            android:label="@string/title_activity_learnin_resources" >
+        </activity>
     </application>
 
 </manifest>

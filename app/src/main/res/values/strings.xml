@@ -10,5 +10,14 @@
     <string name="range_group_title">Range group: 0-90</string>
     <string name="spinner_license_title">License</string>
     <string name="tags_title">Tags</string>
+    <string name="subchapter1_title">Subchapter 1</string>
+    <string name="lorem_ipsum">        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Donec euismod convallis dui, vitae tincidunt dolor efficitur gravida. Maecenas sed
+        lorem et dui venenatis commodo. Quisque ut tempus felis, sit amet porttitor augue.
+        Praesent pharetra id ipsum vitae posuere. Pellentesque dapibus, dui sed tincidunt accumsan,
+        arcu urna finibus turpis, ac cursus arcu sapien id sem. Etiam tempus dolor in
+        tortor scelerisque faucibus.</string>
+    <string name="suggested_learning_resources_title">Suggested learning resources</string>
+    <string name="title_activity_learnin_resources">LearninResources</string>
 
 </resources>

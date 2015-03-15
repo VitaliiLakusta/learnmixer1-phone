@@ -54,20 +54,6 @@ public class MainActivity extends ActionBarActivity {
         tagAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         tagSpinner1.setAdapter(tagAdapter);
 
-//        RelativeLayout rl = (RelativeLayout) findViewById(R.id.mainLayout);
-//        Spinner[] spinners = new Spinner[3];
-//        for (int i = 0; i < 3; i++) {
-//            spinners[i] = new Spinner(getApplicationContext());
-//            spinners[i].setLayoutParams(new Spinner.LayoutParams(Spinner.LayoutParams.WRAP_CONTENT,
-//                    Spinner.LayoutParams.WRAP_CONTENT));
-//            RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) spinners[i].getLayoutParams();
-//            params.addRule(RelativeLayout.ABOVE, R.id.textTagTitle);
-//            spinners[i].setLayoutParams(params);
-//
-//            spinners[i].setAdapter(tagAdapter);
-//            rl.addView(spinners[i]);
-//        }
-
         // set up range bar for age group
         RangeSeekBar<Integer> seekBar = new RangeSeekBar<Integer>(0, 90, getApplicationContext());
         TextView rangeGroupText = (TextView) findViewById(R.id.rangeGroupText);
@@ -80,7 +66,6 @@ public class MainActivity extends ActionBarActivity {
                 rangeGroupText.setText("Age group: " + minValue + "-" + maxValue);
             }
         });
-
         ViewGroup layout = (ViewGroup) findViewById(R.id.linearRange);
         layout.addView(seekBar);
     }
@@ -120,5 +105,9 @@ public class MainActivity extends ActionBarActivity {
 
     public void onClickWatchVideo(View view) {
         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=9XFeW9dgyIs&list=UUAuUUnT6oDeKwE6v1NGQxug")));
+    }
+
+    public void onClickLearningResources(View v) {
+        startActivity(new Intent(MainActivity.this, LearninResources.class));
     }
 }
