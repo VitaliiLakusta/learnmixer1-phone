@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context="com.learning.vitaliylakusta.learnmixer1_phone.LearninResources">
 
-    <fragment
+    <FrameLayout
         android:name="com.learning.vitaliylakusta.learnmixer1_phone.LearningResourcesFragment"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

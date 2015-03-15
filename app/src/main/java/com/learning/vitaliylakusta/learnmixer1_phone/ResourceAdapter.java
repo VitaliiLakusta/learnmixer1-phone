@@ -33,7 +33,7 @@ public class ResourceAdapter extends ArrayAdapter<String> {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         final View rowView = inflater.inflate(R.layout.learning_resource, parent, false);
 
-        String resourceTitleText = getItem(position);
+        final String resourceTitleText = getItem(position);
         TextView resourceTitle = (TextView) rowView.findViewById(R.id.resourceTitle);
         resourceTitle.setText(resourceTitleText);
 
@@ -42,6 +42,7 @@ public class ResourceAdapter extends ArrayAdapter<String> {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, ResourceDetails.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra("resourceTitle", resourceTitleText);
                 context.startActivity(intent);
             }
         });

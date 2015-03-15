@@ -15,13 +15,13 @@ public class LearninResources extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_learnin_resources);
 
-        if (findViewById(R.id.fragment_container) != null) {
+        if (findViewById(R.id.fragment_placeholder) != null) {
             if (savedInstanceState != null) {
                 return;
             }
 
             LearningResourcesFragment resourcesFragment = new LearningResourcesFragment();
-            getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, resourcesFragment).commit();
+            getSupportFragmentManager().beginTransaction().add(R.id.fragment_placeholder, resourcesFragment).commit();
         }
     }
 
