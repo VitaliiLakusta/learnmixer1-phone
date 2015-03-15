@@ -4,32 +4,21 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 
 
-public class LearninResources extends ActionBarActivity {
+public class ResourceDetails extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_learnin_resources);
-
-        if (findViewById(R.id.fragment_container) != null) {
-            if (savedInstanceState != null) {
-                return;
-            }
-
-            LearningResourcesFragment resourcesFragment = new LearningResourcesFragment();
-            getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, resourcesFragment).commit();
-        }
+        setContentView(R.layout.activity_resource_details);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_learnin_resources, menu);
+        getMenuInflater().inflate(R.menu.menu_resource_details, menu);
         return true;
     }
 

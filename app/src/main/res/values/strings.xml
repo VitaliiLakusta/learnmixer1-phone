@@ -19,5 +19,7 @@
         tortor scelerisque faucibus.</string>
     <string name="suggested_learning_resources_title">Suggested learning resources</string>
     <string name="title_activity_learnin_resources">LearninResources</string>
+    <string name="resources_see_more">See details</string>
+    <string name="title_activity_resource_details">ResourceDetails</string>
 
 </resources>

@@ -20,6 +20,10 @@
             android:name=".LearninResources"
             android:label="@string/title_activity_learnin_resources" >
         </activity>
+        <activity
+            android:name=".ResourceDetails"
+            android:label="@string/title_activity_resource_details" >
+        </activity>
     </application>
 
 </manifest>
